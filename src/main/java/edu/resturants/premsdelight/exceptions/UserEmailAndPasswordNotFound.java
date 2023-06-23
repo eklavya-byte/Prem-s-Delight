@@ -1,17 +1,20 @@
 package edu.resturants.premsdelight.exceptions;
 
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-@AllArgsConstructor
+@Getter
 @NoArgsConstructor
+@AllArgsConstructor
 
-public class UserIdNotFoundException extends RuntimeException {
+public class UserEmailAndPasswordNotFound extends RuntimeException{
+	
 	private String message;
 
 	@Override
 	public String getMessage() {
+
 		return message;
 	}
-
 }

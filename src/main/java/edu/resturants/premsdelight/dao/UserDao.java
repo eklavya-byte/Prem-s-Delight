@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import edu.resturants.premsdelight.entity.User;
-import edu.resturants.premsdelight.exceptions.UserEmailAndPasswordNotFount;
+import edu.resturants.premsdelight.exceptions.UserEmailAndPasswordNotFound;
 import edu.resturants.premsdelight.exceptions.UserIdNotFoundException;
 import edu.resturants.premsdelight.repository.UserRepository;
 
@@ -31,12 +31,12 @@ public class UserDao {
 	}
 	
 	public User findUserByEmailAndPassword(String email,String password ) {
-		Optional<User> optional=userRepository.getUserByEmailandPassword(email,password);
+		Optional<User> optional=userRepository.getUserByEmailAndPassword(email,password);
 		if(optional.isPresent())
 		{
 			return optional.get();
 		}
-		throw new UserEmailAndPasswordNotFount("User with the given Email and Password not found ! ");
+		throw new UserEmailAndPasswordNotFound("User with the given Email and Password not found ! ");
 	}
 	
 	public void deleteUserById(long userId) {

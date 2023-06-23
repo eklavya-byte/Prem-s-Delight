@@ -1,17 +1,22 @@
 package edu.resturants.premsdelight.exceptions;
 
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
-
-public class UserIdNotFoundException extends RuntimeException {
+public class ItemWithIdNotFound extends RuntimeException{
+	
 	private String message;
 
 	@Override
 	public String getMessage() {
 		return message;
 	}
+
 
 }
